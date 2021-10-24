@@ -1,6 +1,12 @@
-def main():
-    pass
+import logging
+from fastapi import FastAPI
 
 
-if __name__ == '__main__':
-    main()
+app = FastAPI()
+
+logger = logging.getLogger(__name__)
+
+
+@app.get("/")
+def check_index_page():
+    return {"greetings": "Welcome to redandmem"}
